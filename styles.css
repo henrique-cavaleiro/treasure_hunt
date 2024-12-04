@@ -1,0 +1,73 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#start-page, #quiz-container, #score-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+#start-page button, #restart-quiz-button {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#start-page button:hover, #restart-quiz-button:hover {
+  background: #0056b3;
+}
+
+#life-bar-container {
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+#life-bar {
+  background: #4caf50;
+  height: 20px;
+  width: 100%;
+}
+
+#question-container input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#question-container button {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#question-container button:hover {
+  background: #0056b3;
+}
+
+#score-container {
+  margin-top: 20px;
+}
