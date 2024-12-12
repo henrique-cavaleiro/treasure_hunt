@@ -90,7 +90,7 @@ function checkAnswer(userAnswer) {
 
 // Functie om de levensbalk bij te werken
 function updateLife() {
-    life -= 1; // Verlies 1% leven per seconde
+    life -= 0.1667; // Verlies 0.1667% leven per seconde (voor 10 minuten totaal)
     if (life <= 0) {
         life = 0; // Zorg ervoor dat leven niet onder 0 komt
         endQuiz(); // Einde van de quiz bij 0% leven
