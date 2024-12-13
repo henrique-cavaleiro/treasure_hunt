@@ -146,9 +146,22 @@ const mapContainer = document.getElementById('map-container');
 
 // Toggle kaart zichtbaarheid
 toggleMapButton.addEventListener('click', () => {
-    if (mapContainer.style.display === 'none') {
-        mapContainer.style.display = 'block';
-    } else {
+    const isMapVisible = mapContainer.style.display === 'block';
+
+    if (isMapVisible) {
+        // Verberg de kaart en toon de andere inhoud
         mapContainer.style.display = 'none';
+        document.body.classList.remove('hidden-content');
+    } else {
+        // Toon de kaart en verberg de andere inhoud
+        mapContainer.style.display = 'block';
+        document.body.classList.add('hidden-content');
     }
+});
+
+const closeMapButton = document.getElementById('close-map-button');
+
+closeMapButton.addEventListener('click', () => {
+    mapContainer.style.display = 'none'; // Verberg de kaart
+    document.body.classList.remove('hidden-content'); // Toon de rest van de inhoud
 });

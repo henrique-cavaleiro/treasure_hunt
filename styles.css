@@ -71,18 +71,7 @@ body {
 #score-container {
   margin-top: 20px;
 }
-#map-container {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: white;
-  text-align: center;
-  padding: 10px 0;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-  display: none; /* Verberg standaard */
-  z-index: 1000; /* Zorg ervoor dat het boven andere elementen komt */
-}
+
 
 #toggle-map-button {
   position: fixed;
@@ -101,9 +90,42 @@ body {
   background: #0056b3;
 }
 
+#map-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  background: white;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; /* Verberg standaard */
+  z-index: 1000; /* Zorg ervoor dat het boven andere elementen komt */
+}
+
 #map-image {
   max-width: 100%;
   height: auto;
   border: 2px solid #ccc;
   border-radius: 8px;
+}
+
+body.hidden-content > *:not(#map-container) {
+  display: none !important; /* Verberg alles behalve de kaart */
+}
+
+#close-map-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#close-map-button:hover {
+  background: #d32f2f;
 }
