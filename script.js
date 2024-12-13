@@ -14,6 +14,11 @@ const answerInput = document.getElementById("answer-input");
 const submitAnswerButton = document.getElementById("submit-answer");
 const scoreText = document.getElementById("score");
 
+const closeMapButton = document.getElementById('close-map-button');
+const toggleMapButton = document.getElementById('toggle-map-button');
+const mapContainer = document.getElementById('map-container');
+
+
 // De vragen en hun juiste antwoorden
 let questions = [
     { question: "Wat is de antwoord van de eerste laadstation?", correct: "1" },
@@ -141,8 +146,7 @@ restartQuizButton.addEventListener("click", () => {
     scoreContainer.style.display = "none"; // Verberg het score-scherm
 });
 
-const toggleMapButton = document.getElementById('toggle-map-button');
-const mapContainer = document.getElementById('map-container');
+
 
 // Toggle kaart zichtbaarheid
 toggleMapButton.addEventListener('click', () => {
@@ -159,7 +163,6 @@ toggleMapButton.addEventListener('click', () => {
     }
 });
 
-const closeMapButton = document.getElementById('close-map-button');
 
 closeMapButton.addEventListener('click', () => {
     mapContainer.style.display = 'none'; // Verberg de kaart
