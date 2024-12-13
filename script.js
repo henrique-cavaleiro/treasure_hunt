@@ -16,16 +16,16 @@ const scoreText = document.getElementById("score");
 
 // De vragen en hun juiste antwoorden
 let questions = [
-    { question: "Wat is de antwoord van de eerste laadstation?", correct: "4" },
-    { question: "Wat is de antwoord van de tweede laadstation?", correct: "4" },
-    { question: "Wat is de antwoord van de derde laadstation?", correct: "4" },
+    { question: "Wat is de antwoord van de eerste laadstation?", correct: "1" },
+    { question: "Wat is de antwoord van de tweede laadstation?", correct: "2" },
+    { question: "Wat is de antwoord van de derde laadstation?", correct: "3" },
     { question: "Wat is de antwoord van de vierde laadstation?", correct: "4" },
-    { question: "Wat is de antwoord van de vijfde laadstation?", correct: "4" },
-    { question: "Wat is de antwoord van de zesde laadstation?", correct: "4" },
-    { question: "Wat is de antwoord van de zevende laadstation?", correct: "4" },
-    { question: "Wat is de antwoord van de achtste laadstation?", correct: "4" },
-    { question: "Wat is de antwoord van de negende laadstation?", correct: "4" },
-    { question: "Wat is de antwoord van de tiende laadstation?", correct: "4" },
+    { question: "Wat is de antwoord van de vijfde laadstation?", correct: "5" },
+    { question: "Wat is de antwoord van de zesde laadstation?", correct: "6" },
+    { question: "Wat is de antwoord van de zevende laadstation?", correct: "7" },
+    { question: "Wat is de antwoord van de achtste laadstation?", correct: "8" },
+    { question: "Wat is de antwoord van de negende laadstation?", correct: "9" },
+    { question: "Wat is de antwoord van de tiende laadstation?", correct: "10" },
 ];
 
 // Variabelen voor het bijhouden van de quizstatus
@@ -45,6 +45,10 @@ function startQuiz() {
     quizContainer.style.display = "block"; // Toon de quiz container
     startPage.style.display = "none"; // Verberg de startpagina
     scoreContainer.style.display = "none"; // Verberg de score container
+
+    // Maak de kaartknop zichtbaar
+    toggleMapButton.style.display = "block";
+
     updateLifeBar(); // Update de levensbalk
     displayQuestion(); // Toon de eerste vraag
     timerInterval = setInterval(updateLife, 1000); // Zet een interval voor de levensbalk (elke seconde)
@@ -90,7 +94,7 @@ function checkAnswer(userAnswer) {
 
 // Functie om de levensbalk bij te werken
 function updateLife() {
-    life -= 0.1667; // Verlies 0.1667% leven per seconde (voor 10 minuten totaal)
+    life -= 1; // Verlies 0.1667% leven per seconde (voor 10 minuten totaal) (100/600)(0.1667%)
     if (life <= 0) {
         life = 0; // Zorg ervoor dat leven niet onder 0 komt
         endQuiz(); // Einde van de quiz bij 0% leven
@@ -104,6 +108,7 @@ function updateLifeBar() {
     // Verander de kleur van de levensbalk op basis van de resterende levens
     lifeBar.style.backgroundColor = life > 50 ? "#4caf50" : life > 20 ? "#ffa500" : "#f44336";
 }
+
 
 // Functie om de quiz te beëindigen
 function endQuiz() {
@@ -134,4 +139,16 @@ startQuizButton.addEventListener("click", startQuiz); // Start de quiz wanneer o
 restartQuizButton.addEventListener("click", () => {
     startPage.style.display = "block"; // Toon de startpagina opnieuw
     scoreContainer.style.display = "none"; // Verberg het score-scherm
+});
+
+const toggleMapButton = document.getElementById('toggle-map-button');
+const mapContainer = document.getElementById('map-container');
+
+// Toggle kaart zichtbaarheid
+toggleMapButton.addEventListener('click', () => {
+    if (mapContainer.style.display === 'none') {
+        mapContainer.style.display = 'block';
+    } else {
+        mapContainer.style.display = 'none';
+    }
 });
